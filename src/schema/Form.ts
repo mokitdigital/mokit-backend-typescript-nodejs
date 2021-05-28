@@ -6,8 +6,7 @@ interface FormInterface extends Document {
   email?: String,
   celular?: String,
   tipo?: String,
-  descreva?: String,
-  dataHora?: String
+  descreva?: String
 }
 
 const FormSchema = new Schema({
@@ -16,8 +15,7 @@ const FormSchema = new Schema({
     email: String,
     celular: String,
     tipo: String,
-    descreva: String,
-    dataHora: String
+    descreva: String
   }, 
   {
     timestamps: true

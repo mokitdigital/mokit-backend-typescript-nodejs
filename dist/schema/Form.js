@@ -9,15 +9,13 @@
 
 
 
-
 const FormSchema = new (0, _mongoose.Schema)({
     nomeCompleto: String,
     empresa: String,
     email: String,
     celular: String,
     tipo: String,
-    descreva: String,
-    dataHora: String
+    descreva: String
   }, 
   {
     timestamps: true

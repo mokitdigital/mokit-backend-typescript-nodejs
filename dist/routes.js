@@ -5,11 +5,11 @@ var _Authcontroller = require('./controllers/Auth.controller'); var _Authcontrol
 
 const routes = _express.Router.call(void 0, )
 
-routes.get('/users', _Usercontroller2.default.find)
-routes.post('/users', _Usercontroller2.default.create)
+routes.get('/api/users', _Usercontroller2.default.find)
+routes.post('/api/users', _Usercontroller2.default.create)
 
-routes.get('/forms', _Formcontroller2.default.find)
-routes.post('/forms', _Formcontroller2.default.create)
+routes.get('/api/forms', _Formcontroller2.default.find)
+routes.post('/api/forms', _Formcontroller2.default.create)
 
 routes.get('/auths', _Authcontroller2.default.find)
 routes.get('/auths/findOnes', _Authcontroller2.default.findOne)
