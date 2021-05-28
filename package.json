@@ -5,7 +5,7 @@
   "main": "src/server.ts",
   "scripts": {
     "dev": "nodemon src/server.ts",
-    "build": "sucrase ./src -d ./dist --transforms typescript,imports",
+    "build": "tsc --project ./",
     "start": "tsc && node dist/server.js"
   },
   "keywords": [
