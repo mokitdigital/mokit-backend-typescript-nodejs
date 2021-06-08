@@ -13,6 +13,14 @@ class FormController {
 
     return res.json(form)
   }
+
+  public async delete (req: Request, res: Response): Promise<Response> {
+    const id = req.query.id
+
+    const form = await Form.deleteOne({ _id: id })
+
+    return res.json(form)
+  }
 }
 
 export default new FormController()

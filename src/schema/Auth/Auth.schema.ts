@@ -1,17 +1,21 @@
-import { Schema, model, Document } from 'mongoose'
+import { Schema, model } from 'mongoose'
 import bcrypt from 'bcryptjs'
+import { IAuthDocument } from './Auth.types'
 
-interface AuthInterface extends Document {
-  userName?: string,
-  passWord?: string
-}
 
 const AuthSchema = new Schema ({
   userName: String,
-  passWord: String
+  passWord: String,
+  email: String,
+  firstName: String,
+  lastName: String
+}, {
+  timestamps: true,
 })
 
-AuthSchema.pre<AuthInterface>('save', function (next) {
+
+
+AuthSchema.pre<IAuthDocument>('save', function (next) {
   const user = this
 
   if (!user.isModified('passWord')) {
@@ -28,4 +32,6 @@ AuthSchema.pre<AuthInterface>('save', function (next) {
   })
 })
 
-export default model<AuthInterface>('Auth', AuthSchema)
+AuthSchema.methods.checkPassword
+
+export default AuthSchema

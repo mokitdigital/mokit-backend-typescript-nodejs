@@ -1,20 +1,17 @@
 import { Router } from 'express'
-import UserController from './controllers/User.controller'
 import FormController from './controllers/Form.controller'
 import AuthController from './controllers/Auth.controller'
 
 const routes = Router()
 
-routes.get('/api/users', UserController.find)
-routes.post('/api/users', UserController.create)
-
 routes.get('/api/forms', FormController.find)
 routes.post('/api/forms', FormController.create)
+routes.delete('/api/forms', FormController.delete)
 
-routes.get('/auths', AuthController.find)
-routes.get('/auths/findOnes', AuthController.findOne)
-routes.post('/auths', AuthController.create)
-routes.delete('/auths', AuthController.delete)
-routes.put('/auths', AuthController.update)
+routes.get('/api/auths', AuthController.find)
+routes.get('/api/auths/findOnes', AuthController.findOne)
+routes.post('/api/auths', AuthController.create)
+routes.delete('/api/auths', AuthController.delete)
+routes.put('/api/auths', AuthController.update)
 
 export default routes
